@@ -10,6 +10,11 @@
 
     <!--Description-->
     
+        <meta name="description" content="PreparationBuilding environment: macOS 10.11.5  
+
+Install Node.js if not exist.Download address: Node.js  
+Install hexo if not exist.Execute the foll">
+    
 
     <!--Author-->
     
@@ -18,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="KNOX"/>
+        <meta property="og:title" content="How to build a blog with Hexo on GitHub Pages"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +34,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>KNOX</title>
+    <title>How to build a blog with Hexo on GitHub Pages - KNOX</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -116,66 +121,78 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6d1a6d1c5a7eb63d0c411b1d019f0b30')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>KNOX</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>How to build a blog with Hexo on GitHub Pages</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2016-07-08
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2016/07/08/How-to-build-a-blog-with-Hexo-on-GitHub-Pages/">
-        <h2 class="post-title">
-            How to build a blog with Hexo on GitHub Pages
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-07-08
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/07/08/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-07-08
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h3><p>Building environment: macOS 10.11.5  </p>
+<ol>
+<li>Install Node.js if not exist.<br>Download address: <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>  </li>
+<li>Install hexo if not exist.<br>Execute the follow command:<br><code>sudo npm install -g hexo-cli</code>  </li>
+<li>Building local host, by execute command.<br><code>hexo init</code>  </li>
+<li>Start hexo server by execute command.<br><code>hexo server</code>    </li>
+<li>Done preparation. </li>
+</ol>
+<h3 id="Connect-to-GitHub-Pages"><a href="#Connect-to-GitHub-Pages" class="headerlink" title="Connect to GitHub Pages"></a>Connect to GitHub Pages</h3><ol>
+<li>create new repository on GitHub call “chowaikong.github.io”  </li>
+<li>modify <strong>_config.yml</strong> file, add following content.<br>deploy:<br>type: git<br>repository: <a href="https://github.com/chowaikong/chowaikong.github.io.git" target="_blank" rel="external">https://github.com/chowaikong/chowaikong.github.io.git</a><br>branch: master<br>Ps: space is must need behind :  </li>
+<li>Generate page by execute command.<br><code>hexo g</code>  </li>
+<li>Deploy to GitHub<br><code>npm install hexo-deployer-git --save</code><br><code>hexo d</code>  </li>
+<li>Done connecting. Try chowaikong.github.io.</li>
+</ol>
+<h3 id="Posting"><a href="#Posting" class="headerlink" title="Posting"></a>Posting</h3><ol>
+<li>cd to ~/Blog/source/_posts.  </li>
+<li>hexo new “xxx”  </li>
+<li>hexo clean</li>
+<li>hexo g  </li>
+<li>hexo d  </li>
+<li>done.  </li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
