@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="Standard默认的模式，实例可归属任何任务，并且可以位于 Activity 堆栈中的任何位置。
+每次“standard”Activity 有新的 Intent 时，系统都会创建新的类实例来响应该 Intent。每个实例处理单个 Intent。
+Activity 可以多次实例化，而每个实例均可属于">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="KNOX"/>
+        <meta property="og:title" content="Android Basics - Activity Launch Mode"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>KNOX</title>
+    <title>Android Basics - Activity Launch Mode - KNOX</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -116,81 +120,65 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1463123081488-789f998ac9c4?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6d1a6d1c5a7eb63d0c411b1d019f0b30')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>KNOX</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>Android Basics - Activity Launch Mode</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        2017-07-15
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2017/07/15/Android-Basics-Activity-Launch-Mode/">
-        <h2 class="post-title">
-            Android Basics - Activity Launch Mode
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2017-07-15
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/08/24/Learning-DataBinding/">
-        <h2 class="post-title">
-            LearningDataBinding
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-08-24
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2016/07/08/How-to-build-a-blog-with-Hexo-on-GitHub-Pages/">
-        <h2 class="post-title">
-            How to build a blog with Hexo on GitHub Pages
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2016-07-08
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-</ul>
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="Standard"><a href="#Standard" class="headerlink" title="Standard"></a>Standard</h2><p>默认的模式，实例可归属任何任务，并且可以位于 Activity 堆栈中的任何位置。</p>
+<p>每次“<code>standard</code>”Activity 有新的 Intent 时，系统都会创建新的类实例来响应该 Intent。每个实例处理单个 Intent。</p>
+<p>Activity 可以多次实例化，而每个实例均可属于不同的任务，并且一个任务可以拥有多个实例。</p>
+<h2 id="SingleTop"><a href="#SingleTop" class="headerlink" title="SingleTop"></a>SingleTop</h2><p>实例可归属任何任务，并且可以位于 Activity 堆栈中的任何位置。</p>
+<p>如果目标任务在其堆栈顶部已有一个 Activity 实例，那么该实例将接收新 Intent（通过调用<code>onNewIntent()</code>）；此时不会创建新实例。</p>
+<p>如果“<code>singleTop</code>”的一个现有实例虽在目标任务内，但未处于堆栈顶部，或者虽然位于堆栈顶部，但不在目标任务中 — 则系统会创建一个新实例并将其推送到堆栈上。</p>
+<p>Activity 可以多次实例化，而每个实例均可属于不同的任务，并且一个任务可以拥有多个实例（但前提是位于返回栈顶部的 Activity 并不是 Activity 的现有实例）。</p>
+<h2 id="SingleTask"><a href="#SingleTask" class="headerlink" title="SingleTask"></a>SingleTask</h2><p>“<code>singleTask</code>”Activity 允许其他 Activity 成为其任务的组成部分。 它始终位于其任务的根位置，但其他 Activity（必是“<code>standard</code>”和“<code>singleTop</code>”Activity）可以启动到该任务中。 一次只能存在 Activity 的一个实例。</p>
+<p>在启动 singleTask 的 Activity时，系统会先检查是否有 Task 的 affinity 值与该 Activity 的 taskAffinity 相同，如果有，Activity 就会在这个 Task 中启动，否则就会在新的 Task 中启动。因此，如果我们想要设置了 singleTask 启动模式的 Activity 在新的 Task 中启动，就要为它设置一个独立的 taskAffinity 属性值。如果不是在新的 Task 中启动，它会在已有的 Task 中查看是否已经存在相应的 Activity 实例，如果存在，就会把位于这个 Activity 实例上面的 Activity 全部结束掉，即最终这个 Activity 实例会位于该 Task 的栈顶，并调用该实例的 <code>onNewIntent()</code> 方法。</p>
+<h2 id="SingleInstance"><a href="#SingleInstance" class="headerlink" title="SingleInstance"></a>SingleInstance</h2><p>不允许其他 Activity 成为其任务的组成部分。它是任务中唯一的 Activity。如果它启动另一个 Activity，系统会将该 Activity 分配给其他任务 — 就好像 Intent 中包含 <code>FLAG_ACTIVITY_NEW_TASK</code> 一样。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
